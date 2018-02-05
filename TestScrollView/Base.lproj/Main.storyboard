@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7o1-88-ayb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ImageViewController" customModule="TestScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="9Ib-SG-up8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sample.png" translatesAutoresizingMaskIntoConstraints="NO" id="pBD-FT-iO0">
+                                        <rect key="frame" x="0.0" y="0.0" width="756" height="1024"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="twO-9O-Dv4"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9Ib-SG-up8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nf1-et-xp7"/>
+                            <constraint firstItem="9Ib-SG-up8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Nku-FK-geM"/>
+                            <constraint firstItem="9Ib-SG-up8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dQv-Gg-11Y"/>
+                            <constraint firstItem="9Ib-SG-up8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kcL-bs-IbX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lfI-ux-WfZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="NVc-3P-fq3">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="e3b-j4-XZQ">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="S"/>
+                                    <segment title="M"/>
+                                    <segment title="L"/>
+                                </segments>
+                                <connections>
+                                    <action selector="resizeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="M2u-ug-JhC"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="pBD-FT-iO0" id="BtP-bi-Ifl"/>
+                        <outlet property="scrollView" destination="9Ib-SG-up8" id="Hbt-Kz-0IU"/>
+                        <outlet property="segmentedControl" destination="e3b-j4-XZQ" id="Nir-PK-vMe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676" y="400.74962518740631"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LZN-Lv-ZsO">
+            <objects>
+                <navigationController id="7o1-88-ayb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K5d-Wq-lTj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="n2D-tC-FHz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NM1-iG-KBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-94" y="401"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Sample.png" width="1200" height="1498"/>
+    </resources>
+</document>
