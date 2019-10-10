@@ -1,8 +1,8 @@
 //
-//  CoreGraphics+Z.swift
-//  TestScrollView
+//	CoreGraphics+Z.swift
+//	TestScrollView
 //
-//  Created by Kaz Yoshikawa on 2/4/18.
+//	Created by Kaz Yoshikawa on 2/4/18.
 //	Copyright (c) 2018 Electricwoods LLC. All rights reserved.
 //
 
@@ -93,8 +93,7 @@ extension CGPoint {
 extension CGPoint {
 
 	init<X: CGFloatCovertible, Y: CGFloatCovertible>(_ x: X, _ y: Y) {
-		self.x = x.cgFloatValue
-		self.y = y.cgFloatValue
+		self = CGPoint(x: x.cgFloatValue, y: y.cgFloatValue)
 	}
 
 }
@@ -103,8 +102,7 @@ extension CGPoint {
 extension CGSize {
 
 	init<W: CGFloatCovertible, H: CGFloatCovertible>(_ width: W, _ height: H) {
-		self.width = width.cgFloatValue
-		self.height = height.cgFloatValue
+		self = CGSize(width: width.cgFloatValue, height: height.cgFloatValue)
 	}
 
 	static func - (lhs: CGSize, rhs: CGSize) -> CGSize {
@@ -129,8 +127,7 @@ extension CGSize {
 extension CGRect {
 
 	init<X: CGFloatCovertible, Y: CGFloatCovertible, W: CGFloatCovertible, H: CGFloatCovertible>(_ x: X, _ y: Y, _ width: W, _ height: H) {
-		self.origin = CGPoint(x, y)
-		self.size = CGSize(width, height)
+		self = CGRect(origin: CGPoint(x, y), size: CGSize(width, height))
 	}
 
 }

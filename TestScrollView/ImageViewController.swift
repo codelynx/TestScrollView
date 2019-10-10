@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
-//  TestScrollView
+//	ViewController.swift
+//	TestScrollView
 //
-//  Created by Kaz Yoshikawa on 2/4/18.
+//	Created by Kaz Yoshikawa on 2/4/18.
 //	Copyright (c) 2018 Electricwoods LLC. All rights reserved.
 
 import UIKit
